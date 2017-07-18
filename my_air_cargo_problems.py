@@ -53,7 +53,7 @@ class AirCargoProblem(Problem):
         # for example, the action schema 'Load(c, p, a)' can represent the concrete actions 'Load(C1, P1, SFO)'
         # or 'Load(C2, P2, JFK)'.  The actions for the planning problem must be concrete because the problems in
         # forward search and Planning Graphs must use Propositional Logic
-        
+
 
 
         def load_actions():
@@ -81,7 +81,7 @@ class AirCargoProblem(Problem):
                              [precond_pos, precond_neg],
                              [effect_add, effect_rem])
                         loads.append(load)
-            
+
             # print(loads)
             return loads
 
@@ -110,7 +110,7 @@ class AirCargoProblem(Problem):
                              [precond_pos, precond_neg],
                              [effect_add, effect_rem])
                         unloads.append(unload)
-            
+
             # print(unloads)
             return unloads
 
@@ -225,16 +225,16 @@ class AirCargoProblem(Problem):
         conditions by ignoring the preconditions required for an action to be
         executed.
         """
-        
+
         # TODO implement (see Russell-Norvig Ed-3 10.2.3  or Russell-Norvig Ed-2 11.2)
         goal_count = len(self.goal)
         incompleted_goals = [goal for goal in self.goal]
-        print("incompleted_goals: {}".format(incompleted_goals))
-        print("state map: {}".format(self.state_map))
-        print("initial_state_TF: {}".format(self.initial_state_TF))
+        # print("incompleted_goals: {}".format(incompleted_goals))
+        # print("state map: {}".format(self.state_map))
+        # print("initial_state_TF: {}".format(self.initial_state_TF))
 
         false_states = [self.state_map[i] for (i, elem) in enumerate(self.initial_state_TF) if elem == 'F']
-        print("false states: {}".format(false_states))
+        # print("false states: {}".format(false_states))
 
         incompleted_goals = [goal for goal in self.goal if goal in false_states]
         count = len(incompleted_goals)
@@ -282,7 +282,7 @@ def air_cargo_p2() -> AirCargoProblem:
 
     neg = [
         expr('At(C3, JFK)'),
-        expr('At(C3, SFL)'),
+        expr('At(C3, SFO)'),
         expr('In(C3, P1)'),
         expr('In(C3, P2)'),
         expr('In(C3, P3)'),
@@ -314,53 +314,56 @@ def air_cargo_p2() -> AirCargoProblem:
 def air_cargo_p3() -> AirCargoProblem:
     # TODO implement Problem 3 definition
     cargos = ['C1', 'C2', 'C3', 'C4']
-    planes = ['P1', 'P2', 'P3', 'P4']
+    planes = ['P1', 'P2']
     airports = ['JFK', 'SFO', 'ATL', 'ORD']
     pos = [expr('At(C1, SFO)'),
            expr('At(C2, JFK)'),
            expr('At(C3, ATL)'),
            expr('At(C4, ORD)'),
            expr('At(P1, SFO)'),
-           expr('At(P2, JFK)'),
-           expr('At(P3, ATL)'),
-           expr('At(P4, ORD)')
+           expr('At(P2, JFK)')
            ]
 
     neg = [
+        expr('At(C4, SFO)'),
+        expr('At(C4, ATL)'),
+        expr('At(C4, JFK)'),
+        expr('In(C4, P1)'),
+        expr('In(C4, P2)'),
+        # expr('In(C4, P3)'),
+        # expr('In(C4, P4)'),
+
+        expr('At(C3, JFK)'),
+        expr('At(C3, SFL)'),
+        expr('At(C3, ORD)'),
+        expr('In(C3, P1)'),
+        expr('In(C3, P2)'),
+        # expr('In(C3, P3)'),
+        # expr('In(C3, P4)'),
+
         expr('At(C2, SFO)'),
         expr('At(C2, ATL)'),
         expr('At(C2, ORD)'),
         expr('In(C2, P1)'),
         expr('In(C2, P2)'),
-        expr('In(C2, P3)'),
-        expr('In(C2, P4)'),
-        # expr('At(C1, JFK)'),
-        # expr('At(C1, ATL)'),
-        # expr('At(C1, ORD)'),
+        # expr('In(C2, P3)'),
+        # expr('In(C2, P4)'),
+
+        expr('At(C1, JFK)'),
+        expr('At(C1, ATL)'),
+        expr('At(C1, ORD)'),
         expr('In(C1, P1)'),
         expr('In(C1, P2)'),
-        expr('In(C1, P3)'),
-        expr('In(C1, P4)'),
-        # expr('At(C3, JFK)'),
-        # expr('At(C3, SFL)'),
-        # expr('At(C3, ORD)'),
-        expr('In(C3, P1)'),
-        expr('In(C3, P2)'),
-        expr('In(C3, P3)'),
-        expr('In(C3, P4)'),
-        # expr('At(C4, SFO)'),
-        # expr('At(C4, ATL)'),
-        # expr('At(C4, JFK)'),
-        expr('In(C4, P1)'),
-        expr('In(C4, P2)'),
-        expr('In(C4, P3)'),
-        expr('In(C4, P4)'),
-        # expr('At(P1, JFK)'),
-        # expr('At(P1, ATL)'),
-        # expr('At(P1, ORD)'),
-        # expr('At(P2, SFO)'),
-        # expr('At(P2, ATL)'),
-        # expr('At(P2, ORD)'),
+        # expr('In(C1, P3)'),
+        # expr('In(C1, P4)'),
+
+
+        expr('At(P1, JFK)'),
+        expr('At(P1, ATL)'),
+        expr('At(P1, ORD)'),
+        expr('At(P2, SFO)'),
+        expr('At(P2, ATL)'),
+        expr('At(P2, ORD)'),
         # expr('At(P3, SFO)'),
         # expr('At(P3, JFK)'),
         # expr('At(P3, ORD)'),

@@ -1,0 +1,55 @@
+Submission includes the following files:
+    my_air_cargo_problems.py
+    my_planning_graph.py
+
+Uploading submission...
+[=========================   21%                             ] 8192/38462[=========================== 42%                             ] 16384/38462[=========================== 63%  ========                   ] 24576/38462[=========================== 85%  =====================      ] 32768/38462[=========================== 100% ===========================] 38462/38462[=========================== 100% ===========================] 38462/38462
+
+Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results... |Waiting for results... /Waiting for results... -Waiting for results... \Waiting for results...Done!
+
+Results:
+--------
+
+************************************************************************
+                          Test Result Summary                           
+************************************************************************
+
+air_cargo_p1 returns the correct initial fluents                       .
+air_cargo_p1 returns the correct goal fluents                          .
+air_cargo_p1 returns an object of type problem                         .
+air_cargo_p1 returns the correct initial values                        .
+air_cargo_p2 returns the correct initial fluents                       .
+air_cargo_p2 returns the correct goal fluents                          .
+air_cargo_p2 returns an object of type problem                         .
+air_cargo_p2 returns the correct initial values                        .
+air_cargo_p3 returns the correct initial fluents                       .
+air_cargo_p3 returns the correct goal fluents                          .
+air_cargo_p3 returns an object of type problem                         .
+air_cargo_p3 returns the correct initial values                        .
+AirCargoProblem correctly lists possible actions in a given state      .
+AirCargoProblem correctly constructs all possible actions              .
+AirCargoProblem correctly updates state for a given action             .
+AirCargoProblem implements the ignore preconditions heuristic          .
+AirCargoProblem yields a correct solution when input to breadth_first  .
+Action levels have the correct number of actions                       .
+Literal levels have the correct number of literals                     .
+competing_needs_mutex behaves correctly                                .
+inconsistent_effects_mutex behaves correctly                           .
+inconsistent_support_mutex behaves correctly                           .
+interference_mutex behaves correctly                                   .
+negation_mutex behaves correctly                                       .
+Serialization of mutexes is correct                                    .
+levelsum heuristic behaves correctly                                   .
+
+--------------------------------------------------------------------------------
+
+Your code passed all tests.
+WARNING! FILE MISSING - DO NOT SUBMIT TO REVIEW WITHOUT: heuristic_analysis.pdf
+WARNING! FILE MISSING - DO NOT SUBMIT TO REVIEW WITHOUT: research_review.pdf
+
+
+Details are available in cargo_planning-result-81889.json.
+
+If you would like this version of the project to be reviewed,
+submit cargo_planning-81889.zip to the reviews website.
+
